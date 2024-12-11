@@ -132,3 +132,49 @@ body {
 .hero-body {
   animation: fadeIn 0.8s ease-out;
 }
+
+/* Styles for the first table (WebArena table) */
+.table td:first-child {
+  width: 25% !important;
+}
+
+/* Styles for the complex performance comparison table */
+.table th {
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+.table td {
+  vertical-align: middle !important;
+}
+
+
+/* Specific styles for the second table */
+.table.is-bordered tr td[rowspan],
+.table.is-bordered tr td:nth-child(2) {
+  width: 20% !important;  /* Reduced from 10% to 8% */
+  padding-left: 1rem !important;
+  text-align: center !important;  /* Center align the content */
+  vertical-align: middle !important;
+}
+
+.table.is-bordered tr td:nth-child(3) {
+  width: 20% !important;  /* Reduced from 10% to 8% */
+  text-align: center !important;  /* Center align the content */
+}
+
+.table.is-bordered tr td:not(:first-child):not(:nth-child(2)):not(:nth-child(3)) {
+  width: 7% !important;
+  text-align: center !important;
+}
+
+/* Make sure the header cells are also properly aligned */
+.table.is-bordered th {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+/* Override the first table's styles */
+.table:not(.is-bordered) td:first-child {
+  width: 40% !important;
+}
