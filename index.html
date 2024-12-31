@@ -200,78 +200,6 @@
     </div>
   </section>
 
-<!-- Video Gallery Section -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Video Table -->
-    <div class="columns is-centered">
-      <div class="column is-full">
-        <h2 class="title is-size-5 has-text-centered">Guided Replay Demonstrations</h2>
-        <table class="video-table">
-          <tr>
-            <td>
-              <div class="video-container">
-                <video controls autoplay muted>
-                  <source src="images/demo_videos/" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <p class="caption"> </p>
-            </td>
-            <td>
-              <div class="video-container">
-                <video controls autoplay muted>
-                  <source src="images/demo_videos/" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <p class="caption"> </p>
-            </td>
-            <td>
-              <div class="video-container">
-                <video controls autoplay muted>
-                  <source src="images/demo_videos/" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <p class="caption"></p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="video-container">
-                <video controls autoplay muted>
-                  <source src="images/demo_videos/" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <p class="caption"> </p>
-            </td>
-            <td>
-              <div class="video-container">
-                <video controls autoplay muted>
-                  <source src="images/demo_videos/" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <p class="caption"></p>
-            </td>
-            <td>
-              <div class="video-container">
-                <video controls autoplay muted>
-                  <source src="images/demo_videos/" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <p class="caption"> </p>
-            </td>
-          </tr>
-        </table>
-        
-      </div>
-    </div>
-    <!--/ Video Table -->
-
   <section class="section">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
@@ -340,18 +268,97 @@
               </li>
               <div class="content has-text-centered my-5">
                 <img src="images/Part2_v6.png" alt="Trajectory data collection via guided replay" />
-              <li>
-                <strong>Training and fine-tuning with replay data:</strong>
-                The collected trajectory data is used to train and fine-tune GUI agent models, which are evaluated on
-                standard
-                agent benchmarks, demonstrating significant improvements.
-              </li>
+              </div>
+
+              <!-- Video Gallery Section -->
+              <div class="container is-max-desktop">
+                <!-- Video Table -->
+                <div class="columns is-centered">
+                  <div class="column is-full">
+                    <h2 class="title is-size-5 has-text-centered">Guided Replay Demonstrations</h2>
+                    <table class="video-table">
+                      <tr>
+                        <td>
+                          <div class="video-container">
+                            <video controls autoplay muted>
+                              <source src="images/demo_videos/" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p class="caption"> </p>
+                        </td>
+                        <td>
+                          <div class="video-container">
+                            <video controls autoplay muted>
+                              <source src="images/demo_videos/" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p class="caption"> </p>
+                        </td>
+                        <td>
+                          <div class="video-container">
+                            <video controls autoplay muted>
+                              <source src="images/demo_videos/" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p class="caption"></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="video-container">
+                            <video controls autoplay muted>
+                              <source src="images/demo_videos/" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p class="caption"> </p>
+                        </td>
+                        <td>
+                          <div class="video-container">
+                            <video controls autoplay muted>
+                              <source src="images/demo_videos/" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p class="caption"></p>
+                        </td>
+                        <td>
+                          <div class="video-container">
+                            <video controls autoplay muted>
+                              <source src="images/demo_videos/" type="video/mp4">
+                              Your browser does not support the video tag.
+                            </video>
+                          </div>
+                          <p class="caption"> </p>
+                        </td>
+                      </tr>
+                    </table>
+
+                  </div>
+                </div>
+                <!--/ Video Table -->
+
+
+
+
+                <li>
+                  <strong>Training and fine-tuning with replay data:</strong>
+                  The collected trajectory data is used to train and fine-tune GUI agent models, which are evaluated on
+                  standard
+                  agent benchmarks, demonstrating significant improvements.
+                </li>
             </ol>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+
+
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -365,12 +372,14 @@
             </p>
             <ul>
               <li>
-                <strong>Text-based Trajectories:</strong> We collect <strong> 100K </strong> text-based trajectories from web tutorials,
+                <strong>Text-based Trajectories:</strong> We collect <strong> 100K </strong> text-based trajectories
+                from web tutorials,
                 which contain step-by-step instructions and corresponding HTML observations. These trajectories are used
                 to train pure text-based agents.
               </li>
               <li>
-                <strong>Vision-based Trajectories:</strong> We collect <strong> 50K</strong> vision-based trajectories by executing the
+                <strong>Vision-based Trajectories:</strong> We collect <strong> 50K</strong> vision-based trajectories
+                by executing the
                 text-based trajectories in real digital environments. Each trajectory contains a sequence of screenshots
                 and corresponding actions. These trajectories are used to train pure vision-based agents.
               </li>
@@ -390,9 +399,10 @@
               <img src="images/dataset_comparison.png" alt="Dataset Statistics and Examples" />
             </div>
 
-            <p> 
+            <p>
               The data is comprehensive, capturing high- and low-level task details, including <strong> HTML structures,
-              AXTree snapshots, video recordings, and screenshots.</strong> This rich data improves the agent's performance
+                AXTree snapshots, video recordings, and screenshots.</strong> This rich data improves the agent's
+              performance
               on long-horizon tasks, and with a per-trajectory cost of just $0.551, our pipeline offers an efficient,
               scalable solution for data generation.
             </p>
@@ -427,34 +437,35 @@
               evaluated on WebArena.
             </p>
           </div>
-          
-  
-        <!-- Mind2Web Table Image -->
-        <figure>
-          <h3 class="title is-4 mt-5">Mind2Web Performance</h3>
-          <img src="images/mind2web_table.png" alt="Experiments mind2web"  width="80%"/>
-          <figcaption class="caption">
-             Performance comparison of different models on Mind2Web across various evaluation metrics.
-          </figcaption>
-        </figure>
 
-        <!-- ScreenSpot Table Image -->
-        <figure>
-          <h3 class="title is-4 mt-5" >ScreenSpot Grounding Performance</h3>
-          <img src="images/screenspot_table.png" alt="Experiments screenspot"  width="80%"/>
-          <figcaption class="caption">
-           Grounding performance of models on ScreenSpot Web, highlighting their effectiveness in text and icon/widget recognition.
-          </figcaption>
-        </figure>
 
-        <!-- WebArena Table Image -->
-        <figure>
-          <h3 class="title is-4 mt-5">WebArena Evaluation</h3>
-          <img src="images/webarena_table.png" alt="Experiments webarena"  width="80%"/>
-          <figcaption class="caption">
-       Evaluation scores of various models on WebArena, showcasing the impact of AgentTrek integration.
-          </figcaption>
-        </figure>
+          <!-- Mind2Web Table Image -->
+          <figure>
+            <h3 class="title is-4 mt-5">Mind2Web Performance</h3>
+            <img src="images/mind2web_table.png" alt="Experiments mind2web" width="80%" />
+            <figcaption class="caption">
+              Performance comparison of different models on Mind2Web across various evaluation metrics.
+            </figcaption>
+          </figure>
+
+          <!-- ScreenSpot Table Image -->
+          <figure>
+            <h3 class="title is-4 mt-5">ScreenSpot Grounding Performance</h3>
+            <img src="images/screenspot_table.png" alt="Experiments screenspot" width="80%" />
+            <figcaption class="caption">
+              Grounding performance of models on ScreenSpot Web, highlighting their effectiveness in text and
+              icon/widget recognition.
+            </figcaption>
+          </figure>
+
+          <!-- WebArena Table Image -->
+          <figure>
+            <h3 class="title is-4 mt-5">WebArena Evaluation</h3>
+            <img src="images/webarena_table.png" alt="Experiments webarena" width="80%" />
+            <figcaption class="caption">
+              Evaluation scores of various models on WebArena, showcasing the impact of AgentTrek integration.
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -477,7 +488,7 @@
 
 
 
-  
+
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
@@ -502,7 +513,7 @@
   </footer>
 
 
-  
+
 </body>
 
 </html>
