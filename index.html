@@ -158,7 +158,8 @@
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2412.09605" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/2412.09605" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -211,7 +212,7 @@
               digital environments, from web applications to desktop software. However, the development of such agents
               is hindered by the lack of high-quality, multi-step trajectory data required for effective training.
               Existing approaches rely on expensive and labor-intensive human annotation, making them unsustainable at
-              scale. To address this challenge, we propose \ourwork, a scalable data synthesis pipeline that generates
+              scale. To address this challenge, we propose our work, a scalable data synthesis pipeline that generates
               high-quality GUI agent trajectories by leveraging web tutorials. Our method automatically gathers
               tutorial-like texts from the internet, transforms them into task goals with step-by-step instructions, and
               employs a visual-language model (VLM) agent to simulate their execution in a real digital environment. A
@@ -235,10 +236,10 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-2">Overview of the Pipeline</h2>
-          
+
           <!-- Image placeholder -->
           <div class="content has-text-centered">
-            <img src="images/pipeline.png" alt="Overview of the AgentTrek Pipeline"/>
+            <img src="images/pipeline.png" alt="Overview of the AgentTrek Pipeline" />
           </div>
 
           <!-- Caption -->
@@ -248,19 +249,29 @@
             </p>
             <ol>
               <li>
-                <strong>Automatic Tutorial Collection from the Internet:</strong> 
-                Tutorial-related data is extracted and filtered from internet sources using heuristic methods and a FastText model. 
+                <strong>Automatic Tutorial Collection from the Internet:</strong>
+                Tutorial-related data is extracted and filtered from internet sources using heuristic methods and a
+                FastText model.
                 An LLM processes the filtered textual data, transforming it into structured tutorials.
               </li>
+              <div class="content has-text-centered my-5">
+                <img src="images/Part_1_screenshot.png" alt="Automatic Tutorial Collection from the Internet" />
+              </div>
+
               <li>
-                <strong>Trajectory data collection via guided replay:</strong> 
-                A VLM agent interacts with the real digital environment guided by tutorials, while high-quality trajectory data, 
-                including observations, actions, and reasoning, is collected. Another VLM evaluator acts as a judger to further 
+                <strong>Trajectory data collection via guided replay:</strong>
+                A VLM agent interacts with the real digital environment guided by tutorials, while high-quality
+                trajectory data,
+                including observations, actions, and reasoning, is collected. Another VLM evaluator acts as a judger to
+                further
                 improve the effectiveness of the synthetic dataset.
               </li>
+              <div class="content has-text-centered my-5">
+                <img src="images/Part2_v6.png" alt="Trajectory data collection via guided replay" />
               <li>
-                <strong>Training and fine-tuning with replay data:</strong> 
-                The collected trajectory data is used to train and fine-tune GUI agent models, which are evaluated on standard 
+                <strong>Training and fine-tuning with replay data:</strong>
+                The collected trajectory data is used to train and fine-tune GUI agent models, which are evaluated on
+                standard
                 agent benchmarks, demonstrating significant improvements.
               </li>
             </ol>
@@ -277,50 +288,50 @@
           <h2 class="title is-2">AgentTrek Dataset</h2>
           <div class="content has-text-justified">
             <p>
-              AgentTrek is a large-scale multimodal agent trajectory dataset collected from web tutorials. 
+              AgentTrek is a large-scale multimodal agent trajectory dataset collected from web tutorials.
               The dataset contains two types of trajectories:
             </p>
             <ul>
               <li>
-                <strong>Text-based Trajectories:</strong> We collect 100K text-based trajectories from web tutorials, 
-                which contain step-by-step instructions and corresponding HTML observations. These trajectories are used 
+                <strong>Text-based Trajectories:</strong> We collect <strong> 100K </strong> text-based trajectories from web tutorials,
+                which contain step-by-step instructions and corresponding HTML observations. These trajectories are used
                 to train pure text-based agents.
               </li>
               <li>
-                <strong>Vision-based Trajectories:</strong> We collect 50K vision-based trajectories by executing the 
-                text-based trajectories in real digital environments. Each trajectory contains a sequence of screenshots 
+                <strong>Vision-based Trajectories:</strong> We collect 50K vision-based trajectories by executing the
+                text-based trajectories in real digital environments. Each trajectory contains a sequence of screenshots
                 and corresponding actions. These trajectories are used to train pure vision-based agents.
               </li>
             </ul>
 
             <p>
-              With our AgentTrek pipeline, we generate large-scale trajectory data that excels in three areas. 
-              First, the dataset offers extensive diversity, covering multiple domains and task types, and benefiting 
-              from internet-sourced tutorials that enhance task execution. Our experiment showed a 230% performance 
-              increase when agents followed detailed instructions. Second, the data is gathered from real-world web 
-              environments, avoiding the limitations of simulations. Starting with RedPajama, we filtered and processed 
+              With our AgentTrek pipeline, we generate large-scale trajectory data that excels in three areas.
+              First, the dataset offers extensive diversity, covering multiple domains and task types, and benefiting
+              from internet-sourced tutorials that enhance task execution. Our experiment showed a 230% performance
+              increase when agents followed detailed instructions. Second, the data is gathered from real-world web
+              environments, avoiding the limitations of simulations. Starting with RedPajama, we filtered and processed
               23,430 tutorials, producing 10,398 successful trajectories from 127 websites.
             </p>
 
             <!-- Image 1 placeholder -->
             <div class="content has-text-centered my-5">
-              <img src="images/dataset_comparison.png" alt="Dataset Statistics and Examples"/>
+              <img src="images/dataset_comparison.png" alt="Dataset Statistics and Examples" />
             </div>
 
-            <p>
-              The data is comprehensive, capturing high- and low-level task details, including DOM/HTML structures, 
-              AXTree snapshots, video recordings, and screenshots. This rich data improves the agent's performance 
-              on long-horizon tasks, and with a per-trajectory cost of just $0.551, our pipeline offers an efficient, 
+            <p> 
+              The data is comprehensive, capturing high- and low-level task details, including <strong> HTML structures,
+              AXTree snapshots, video recordings, and screenshots.</strong> This rich data improves the agent's performance
+              on long-horizon tasks, and with a per-trajectory cost of just $0.551, our pipeline offers an efficient,
               scalable solution for data generation.
             </p>
 
             <!-- Image 2 placeholder -->
             <div class="content has-text-centered my-5">
-              <img src="images/multimodal_data.png" alt="Dataset Examples and Analysis"/>
+              <img src="images/replay_instance.png" alt="Dataset Examples and Analysis" />
             </div>
 
             <p>
-              All trajectories are automatically collected and filtered by our pipeline, ensuring high quality and 
+              All trajectories are automatically collected and filtered by our pipeline, ensuring high quality and
               diversity. The dataset will be released soon to facilitate research in GUI agents.
             </p>
           </div>
@@ -336,256 +347,44 @@
           <h2 class="title is-2">Experiments</h2>
           <div class="content has-text-justified">
             <p>
-              AgentTrek collects a large scale of multimodal agent trajectory from the internet. 
-              We finetune the VLM model with visual-based trajectory data to obtain a Pure vision-based agent, which is evaluated on Mind2Web and ScreenSpot.
-              We also finetune the LLM model with text-based trajectory data to obtain a Pure text-based agent, which is evaluated on WebArena.
+              AgentTrek collects a large scale of multimodal agent trajectory from the internet.
+              We finetune the VLM model with visual-based trajectory data to obtain a Pure vision-based agent, which is
+              evaluated on Mind2Web and ScreenSpot.
+              We also finetune the LLM model with text-based trajectory data to obtain a Pure text-based agent, which is
+              evaluated on WebArena.
             </p>
           </div>
-          <!-- First Table -->
-          <h3 class="title is-4 mt-5">WebArena</h3>
-          <div class="table-container">
-            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-              <thead>
-                <tr>
-                  <th style="text-align: left">Model</th>
-                  <th class="has-text-centered">Score</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: left">CodeLlama-7B-Instruct</td>
-                  <td class="has-text-centered">0.00</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">LLaMa3-chat-8B</td>
-                  <td class="has-text-centered">3.32</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">Qwen2.5-7B-Instruct</td>
-                  <td class="has-text-centered">3.80</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">LLama3-chat-70B</td>
-                  <td class="has-text-centered">7.02</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">GPT-4o</td>
-                  <td class="has-text-centered">13.10</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">GPT-4</td>
-                  <td class="has-text-centered">14.41</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">Synatra-CodeLlama-7B</td>
-                  <td class="has-text-centered">6.28</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">AutoWebGLM (OOD SFT)</td>
-                  <td class="has-text-centered">8.50</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">AutoWebGLM (In-domain RFT)</td>
-                  <td class="has-text-centered">18.20</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">Qwen2.5-7B-Instruct w/ AgentTrek</td>
-                  <td class="has-text-centered"><strong>10.46</strong></td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">Qwen2.5-32B-Instruct w/ AgentTrek</td>
-                  <td class="has-text-centered"><strong>16.26</strong></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          
+  
+        <!-- Mind2Web Table Image -->
+        <figure>
+          <h3 class="title is-4 mt-5">Mind2Web Performance</h3>
+          <img src="images/mind2web_table.png" alt="Experiments mind2web" />
+          <figcaption class="caption">
+             Performance comparison of different models on Mind2Web across various evaluation metrics.
+          </figcaption>
+        </figure>
 
-          <!-- Second Table -->
-          <h3 class="title is-4 mt-5">Mind2Web</h3>
-          <p class="subtitle is-6 mb-4">Performance comparison across different methods and evaluation settings. 'H', 'I', 'AT', 'M2W' stand for HTML, Image, AgentTrek, Mind2Web</p>
-          <div class="table-container">
-            <table class="table is-bordered is-narrow is-hoverable is-fullwidth">
-              <thead>
-                <tr>
-                  <th rowspan="2">Obs</th>
-                  <th rowspan="2">Model</th>
-                  <th rowspan="2">Method</th>
-                  <th colspan="3" class="has-text-centered">Cross-Task</th>
-                  <th colspan="3" class="has-text-centered">Cross-Website</th>
-                  <th colspan="3" class="has-text-centered">Cross-Domain</th>
-                </tr>
-                <tr>
-                  <th class="has-text-centered">Ele.Acc</th>
-                  <th class="has-text-centered">Op.F1</th>
-                  <th class="has-text-centered">Step SR</th>
-                  <th class="has-text-centered">Ele.Acc</th>
-                  <th class="has-text-centered">Op.F1</th>
-                  <th class="has-text-centered">Step SR</th>
-                  <th class="has-text-centered">Ele.Acc</th>
-                  <th class="has-text-centered">Op.F1</th>
-                  <th class="has-text-centered">Step SR</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td rowspan="2">HTML</td>
-                  <td class="has-text-centered">GPT-3.5</td>
-                  <td>Choice</td>
-                  <td class="has-text-centered">19.4</td>
-                  <td class="has-text-centered">59.2</td>
-                  <td class="has-text-centered">16.8</td>
-                  <td class="has-text-centered">14.9</td>
-                  <td class="has-text-centered">56.5</td>
-                  <td class="has-text-centered">14.1</td>
-                  <td class="has-text-centered">25.2</td>
-                  <td class="has-text-centered">57.9</td>
-                  <td class="has-text-centered">24.1</td>
-                </tr>
-                <tr>
-                  <td class="has-text-centered">GPT-4</td>
-                  <td>Choice</td>
-                  <td class="has-text-centered">40.8</td>
-                  <td class="has-text-centered">63.1</td>
-                  <td class="has-text-centered">32.3</td>
-                  <td class="has-text-centered">30.2</td>
-                  <td class="has-text-centered">61.0</td>
-                  <td class="has-text-centered">27.0</td>
-                  <td class="has-text-centered">35.4</td>
-                  <td class="has-text-centered">61.9</td>
-                  <td class="has-text-centered">29.7</td>
-                </tr>
-                <tr>
-                  <td rowspan="2">H + I</td>
-                  <td>GPT-4</td>
-                  <td>Choice</td>
-                  <td class="has-text-centered">46.4</td>
-                  <td class="has-text-centered">73.4</td>
-                  <td class="has-text-centered">40.2</td>
-                  <td class="has-text-centered">38.0</td>
-                  <td class="has-text-centered">67.8</td>
-                  <td class="has-text-centered">32.4</td>
-                  <td class="has-text-centered">42.4</td>
-                  <td class="has-text-centered">69.3</td>
-                  <td class="has-text-centered">36.8</td>
-                </tr>
-                <tr>
-                  <td>GPT-4</td>
-                  <td>SoM</td>
-                  <td class="has-text-centered">29.6</td>
-                  <td class="has-text-centered">-</td>
-                  <td class="has-text-centered">20.3</td>
-                  <td class="has-text-centered">20.1</td>
-                  <td class="has-text-centered">-</td>
-                  <td class="has-text-centered">13.9</td>
-                  <td class="has-text-centered">27.0</td>
-                  <td class="has-text-centered">-</td>
-                  <td class="has-text-centered">23.7</td>
-                </tr>
-                <tr>
-                  <td rowspan="4">Image</td>
-                  <td colspan="11">Qwen2-VL</td>
-                </tr>
-                <tr>
-                  <td>+ AT</td>
-                  <td>Vision</td>
-                  <td class="has-text-centered">45.5</td>
-                  <td class="has-text-centered">84.9</td>
-                  <td class="has-text-centered">40.9</td>
-                  <td class="has-text-centered">40.8</td>
-                  <td class="has-text-centered">82.8</td>
-                  <td class="has-text-centered">35.1</td>
-                  <td class="has-text-centered">48.6</td>
-                  <td class="has-text-centered">84.1</td>
-                  <td class="has-text-centered">42.1</td>
-                </tr>
-                <tr>
-                  <td>+ M2W</td>
-                  <td>Vision</td>
-                  <td class="has-text-centered">54.8</td>
-                  <td class="has-text-centered">89.5</td>
-                  <td class="has-text-centered">50.9</td>
-                  <td class="has-text-centered">52.9</td>
-                  <td class="has-text-centered">83.9</td>
-                  <td class="has-text-centered">44.9</td>
-                  <td class="has-text-centered">51.8</td>
-                  <td class="has-text-centered">86.8</td>
-                  <td class="has-text-centered">47.7</td>
-                </tr>
-                <tr>
-                  <td>+ AT + M2W</td>
-                  <td>Vision</td>
-                  <td class="has-text-centered">60.8</td>
-                  <td class="has-text-centered">88.9</td>
-                  <td class="has-text-centered">55.7</td>
-                  <td class="has-text-centered">57.6</td>
-                  <td class="has-text-centered">88.1</td>
-                  <td class="has-text-centered">51.4</td>
-                  <td class="has-text-centered">56.0</td>
-                  <td class="has-text-centered">87.5</td>
-                  <td class="has-text-centered">52.6</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <!-- ScreenSpot Table Image -->
+        <figure>
+          <h3 class="title is-4 mt-5">ScreenSpot Grounding Performance</h3>
+          <img src="images/screenspot_table.png" alt="Experiments screenspot" />
+          <figcaption class="caption">
+           Grounding performance of models on ScreenSpot Web, highlighting their effectiveness in text and icon/widget recognition.
+          </figcaption>
+        </figure>
 
-          <!-- Third Table -->
-          <h3 class="title is-4 mt-5">Grounding Performance on ScreenSpot Web</h3>
-          <div class="table-container">
-            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-              <thead>
-                <tr>
-                  <th>Model</th>
-                  <th class="has-text-centered">Text</th>
-                  <th class="has-text-centered">Icon/Widget</th>
-                  <th class="has-text-centered">Average</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: left">GPT-4</td>
-                  <td class="has-text-centered">9.2</td>
-                  <td class="has-text-centered">8.8</td>
-                  <td class="has-text-centered">9.0</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">GPT-4o</td>
-                  <td class="has-text-centered">12.2</td>
-                  <td class="has-text-centered">7.8</td>
-                  <td class="has-text-centered">10.1</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">Qwen2-VL</td>
-                  <td class="has-text-centered">35.2</td>
-                  <td class="has-text-centered">25.7</td>
-                  <td class="has-text-centered">30.7</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">SeeClick</td>
-                  <td class="has-text-centered">55.7</td>
-                  <td class="has-text-centered">32.5</td>
-                  <td class="has-text-centered">44.7</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">CogAgent</td>
-                  <td class="has-text-centered">70.4</td>
-                  <td class="has-text-centered">28.6</td>
-                  <td class="has-text-centered">50.7</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">GPT-4 + OmniParser</td>
-                  <td class="has-text-centered">81.3</td>
-                  <td class="has-text-centered">51.0</td>
-                  <td class="has-text-centered">67.0</td>
-                </tr>
-                <tr>
-                  <td style="text-align: left">Qwen2-VL-7B w/ <strong>AgentTrek</strong></td>
-                  <td class="has-text-centered"><strong>81.7</strong></td>
-                  <td class="has-text-centered"><strong>51.5</strong></td>
-                  <td class="has-text-centered"><strong>67.4</strong></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <!-- WebArena Table Image -->
+        <figure>
+          <h3 class="title is-4 mt-5">WebArena Evaluation</h3>
+          <img src="images/webarena_table.png" alt="Experiments webarena" />
+          <figcaption class="caption">
+       Evaluation scores of various models on WebArena, showcasing the impact of AgentTrek integration.
+          </figcaption>
+        </figure>
+
+
+          
         </div>
       </div>
     </div>
@@ -606,7 +405,7 @@
     </div>
   </section>
 
-  
+
 
   <footer class="footer">
     <div class="container">
