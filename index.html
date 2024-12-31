@@ -200,11 +200,83 @@
     </div>
   </section>
 
+<!-- Video Gallery Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Video Table -->
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-size-5 has-text-centered">Guided Replay Demonstrations</h2>
+        <table class="video-table">
+          <tr>
+            <td>
+              <div class="video-container">
+                <video controls autoplay muted>
+                  <source src="images/demo_videos/gitlab.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p class="caption"> Fork a repo in GitLab</p>
+            </td>
+            <td>
+              <div class="video-container">
+                <video controls autoplay muted>
+                  <source src="images/demo_videos/map.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p class="caption"> Compare the time in Map</p>
+            </td>
+            <td>
+              <div class="video-container">
+                <video controls autoplay muted>
+                  <source src="images/demo_videos/reddit.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p class="caption">Create a new forum in Reddit</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="video-container">
+                <video controls autoplay muted>
+                  <source src="images/demo_videos/shopping.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p class="caption"> Find the most expensive</p>
+            </td>
+            <td>
+              <div class="video-container">
+                <video controls autoplay muted>
+                  <source src="images/demo_videos/shopping_admin.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p class="caption"> Check business history</p>
+            </td>
+            <td>
+              <div class="video-container">
+                <video controls autoplay muted>
+                  <source src="images/demo_videos/wikipedia.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p class="caption"> Check Wikipedia for information</p>
+            </td>
+          </tr>
+        </table>
+        
+      </div>
+    </div>
+    <!--/ Video Table -->
+
   <section class="section">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column is-full">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
@@ -234,7 +306,7 @@
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column is-full">
           <h2 class="title is-2">Overview of the Pipeline</h2>
 
           <!-- Image placeholder -->
@@ -284,7 +356,7 @@
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column is-full">
           <h2 class="title is-2">AgentTrek Dataset</h2>
           <div class="content has-text-justified">
             <p>
@@ -298,7 +370,7 @@
                 to train pure text-based agents.
               </li>
               <li>
-                <strong>Vision-based Trajectories:</strong> We collect 50K vision-based trajectories by executing the
+                <strong>Vision-based Trajectories:</strong> We collect <strong> 50K</strong> vision-based trajectories by executing the
                 text-based trajectories in real digital environments. Each trajectory contains a sequence of screenshots
                 and corresponding actions. These trajectories are used to train pure vision-based agents.
               </li>
@@ -328,6 +400,7 @@
             <!-- Image 2 placeholder -->
             <div class="content has-text-centered my-5">
               <img src="images/replay_instance.png" alt="Dataset Examples and Analysis" />
+              <caption>An example of the trajectory</caption>
             </div>
 
             <p>
@@ -343,7 +416,7 @@
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column is-full">
           <h2 class="title is-2">Experiments</h2>
           <div class="content has-text-justified">
             <p>
@@ -382,9 +455,6 @@
        Evaluation scores of various models on WebArena, showcasing the impact of AgentTrek integration.
           </figcaption>
         </figure>
-
-
-          
         </div>
       </div>
     </div>
@@ -407,6 +477,7 @@
 
 
 
+  
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
@@ -430,6 +501,8 @@
     </div>
   </footer>
 
+
+  
 </body>
 
 </html>

@@ -178,3 +178,35 @@ body {
 .table:not(.is-bordered) td:first-child {
   width: 40% !important;
 }
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 或使用 'contain' 根据需要调整 */
+}
+
+.caption {
+  text-align: center;
+  margin-top: 8px;
+}
+
+table.video-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+table.video-table td {
+  padding: 3px;
+  vertical-align: top; /* 确保单元格内容顶部对齐 */
+}
